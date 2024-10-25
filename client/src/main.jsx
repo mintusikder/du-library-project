@@ -7,8 +7,14 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { router } from './routes/Routes.jsx';
+import AuthProvider from './provider/AuthProvider.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-        <RouterProvider router={router} />
+       <div className="max-w-7xl mx-auto">
+      <AuthProvider>
+        <RouterProvider router={router}></RouterProvider>
+        {/* <Toaster></Toaster> */}
+      </AuthProvider>
+    </div>
   </StrictMode>,
 )
