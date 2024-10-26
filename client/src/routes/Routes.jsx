@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 
 import Registration from "../pages/Register";
 import Books from "../pages/Books";
+import AddBook from "../pages/AddBook";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ export const router = createBrowserRouter([
         path: "/books",
         element: <Books></Books>,
         loader:() => fetch(`${import.meta.env.VITE_API_URL}/books`)
+      },
+      {
+        path: "/addBook",
+        element: <AddBook></AddBook>
+        
       },
     ],
   },

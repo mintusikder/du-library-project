@@ -47,9 +47,9 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
+              <Link to="/addBook">
                 <div className="justify-between">Add Book</div>
-              </li>
+              </Link>
               <Link to="/books">
                 <div>My Book</div>
               </Link>

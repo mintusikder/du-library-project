@@ -63,7 +63,7 @@ const Footer = () => {
           <p className="text-sm text-gray-500 ">
             © Copyright 2024. All Rights Reserved.
           </p>
-
+ 
           <div className="flex -mx-2">
             <a
               href="#"

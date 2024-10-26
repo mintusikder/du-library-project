@@ -27,12 +27,16 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    const booksCollection =client.db("duLibraryBook").collection("books")
+    const booksCollection = client.db("duLibraryBook").collection("books");
 
     //get all books from db
+    app.post("/books", async (req, res) => {
+      const newBook = req.body;
+      console.log(newBook);
+    });
     app.get("/books", async (req, res) => {
-        const result = await booksCollection.find().toArray()
-        res.send(result)
+      const result = await booksCollection.find().toArray();
+      res.send(result);
     });
     await client.db("admin").command({ ping: 1 });
     console.log(

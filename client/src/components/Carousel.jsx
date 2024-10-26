@@ -32,9 +32,9 @@ export default function Carousel() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide><Slide image={img1} text="Web Developer"></Slide></SwiperSlide>
-        <SwiperSlide><Slide image={img2} text="Graphics Design"></Slide></SwiperSlide>
-        <SwiperSlide><Slide image={img3} text="Digital Marketing"></Slide></SwiperSlide>
+        <SwiperSlide><Slide image={img1} text="Book Library"></Slide></SwiperSlide>
+        <SwiperSlide><Slide image={img2} text="Book Library"></Slide></SwiperSlide>
+        <SwiperSlide><Slide image={img3} text="Book Library"></Slide></SwiperSlide>
       </Swiper>
     </>
   );
