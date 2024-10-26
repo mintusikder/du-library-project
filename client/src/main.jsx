@@ -11,7 +11,7 @@ import AuthProvider from './provider/AuthProvider.jsx';
 import { Toaster } from 'react-hot-toast';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-       <div className="max-w-7xl mx-auto">
+       <div className="max-w-7xl mx-auto font-lato">
       <AuthProvider>
         <RouterProvider router={router}></RouterProvider>
         <Toaster></Toaster>

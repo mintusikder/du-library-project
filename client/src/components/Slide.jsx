@@ -15,8 +15,8 @@ const Slide = ({ image, text }) => {
             <h1 className="text-3xl font-semibold mb-4 text-white lg:text-4xl">
               {text}
             </h1>
-            <Link className="w-full px-5 py-2 mt-8 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-gray-400 rounded-md lg:w-auto hover:bg-gray-600 focus:outline-none focus:bg-gray-500">
-              Post Job & Hire Expert
+            <Link to="/books" className="w-full px-5 py-2 mt-8 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-gray-400 rounded-md lg:w-auto hover:bg-gray-600 focus:outline-none focus:bg-gray-500">
+              Search For book
             </Link>
           </div>
         </div>

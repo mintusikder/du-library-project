@@ -35,8 +35,6 @@ export default function Carousel() {
         <SwiperSlide><Slide image={img1} text="Web Developer"></Slide></SwiperSlide>
         <SwiperSlide><Slide image={img2} text="Graphics Design"></Slide></SwiperSlide>
         <SwiperSlide><Slide image={img3} text="Digital Marketing"></Slide></SwiperSlide>
-   
-
       </Swiper>
     </>
   );
