@@ -1,11 +1,11 @@
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion } = require("mongodb");
 const express = require("express");
-const cors = require('cors')
+const cors = require("cors");
 require("dotenv").config();
 //EUHxOQHnQfUhyWUw
 //duLibraryBook
 const port = process.env.PORT || 5000;
-const app = express()
+const app = express();
 const corsOption = {
   origin: ["http://localhost:5173", ":/http/localhost:5174"],
   credential: true,
@@ -13,8 +13,6 @@ const corsOption = {
 };
 app.use(cors(corsOption));
 app.use(express.json());
-
-
 
 const uri = `mongodb+srv://${process.env.USER_DB}:${process.env.USER_PASS}@cluster0.rmmjiwd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
@@ -24,16 +22,22 @@ const client = new MongoClient(uri, {
     version: ServerApiVersion.v1,
     strict: true,
     deprecationErrors: true,
-  }
+  },
 });
 
 async function run() {
   try {
-    // Connect the client to the server	(optional starting in v4.7)
-    // await client.connect();
-    // Send a ping to confirm a successful connection
+    const booksCollection =client.db("duLibraryBook").collection("books")
+
+    //get all books from db
+    app.get("/books", async (req, res) => {
+        const result = await booksCollection.find().toArray()
+        res.send(result)
+    });
     await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    console.log(
+      "Pinged your deployment. You successfully connected to MongoDB!"
+    );
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();
