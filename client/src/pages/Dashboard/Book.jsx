@@ -6,7 +6,7 @@ const Book = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/books")
+    fetch("https://library-book-server.vercel.app/books")
       .then((res) => res.json())
       .then((data) => setBooks(data));
   }, []);

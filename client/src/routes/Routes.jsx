@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
         path: "/updateBook/:id",
         element: <UpdateBook></UpdateBook>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/books/${params.id}`),
+          fetch(`https://library-book-server.vercel.app/books/${params.id}`),
       },
     ],
   },

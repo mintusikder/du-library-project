@@ -28,7 +28,7 @@ const BookCard = ({ book, books, setBooks }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/books/${_id}`, {
+        fetch(`https://library-book-server.vercel.app/books/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

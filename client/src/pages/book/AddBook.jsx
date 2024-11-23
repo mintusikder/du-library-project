@@ -16,7 +16,7 @@ const AddBook = () => {
       year: form.year.value,
     };
 
-    fetch("http://localhost:5000/books", {
+    fetch("https://library-book-server.vercel.app/books", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

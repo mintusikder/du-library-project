@@ -31,7 +31,7 @@ const UpdateBook = () => {
       year: form.year.value,
     };
 
-    fetch(`http://localhost:5000/books/${_id}`, {
+    fetch(`https://library-book-server.vercel.app/books/${_id}`, {
       method: "PUT", // Change to PUT for update
       headers: {
         "Content-Type": "application/json",
