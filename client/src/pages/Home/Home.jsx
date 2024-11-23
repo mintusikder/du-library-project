@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import Carousel from "../components/Carousel";
+import Carousel from "./Carousel";
 const Home = () => {
   return (
     <div>
