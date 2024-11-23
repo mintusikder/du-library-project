@@ -5,7 +5,14 @@ require("dotenv").config();
 const port = process.env.PORT || 5000;
 const app = express();
 const corsOption = {
-  origin: ["http://localhost:5173", "http://localhost:5174","http://localhost:5175"],
+  origin: [
+    // "http://localhost:5173",
+    //  "http://localhost:5174",
+    //  "http://localhost:5175",
+
+    "https://library-book-cd5bc.web.app",
+    "https://library-book-cd5bc.firebaseapp.com",
+  ],
   credentials: true,
   optionSuccessStatus: 200,
 };
@@ -28,17 +35,17 @@ async function run() {
     await client.connect();
     const booksCollection = client.db("duLibraryBook").collection("books");
 
+    // Get all books from the database
+    app.get("/books", async (req, res) => {
+      const result = await booksCollection.find().toArray();
+      res.send(result);
+    });
+
     // Insert a new book into the database
     app.post("/books", async (req, res) => {
       const newBook = req.body;
       console.log(newBook);
       const result = await booksCollection.insertOne(newBook);
-      res.send(result);
-    });
-
-    // Get all books from the database
-    app.get("/books", async (req, res) => {
-      const result = await booksCollection.find().toArray();
       res.send(result);
     });
 
@@ -82,7 +89,9 @@ async function run() {
     });
 
     await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    console.log(
+      "Pinged your deployment. You successfully connected to MongoDB!"
+    );
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
   } finally {
