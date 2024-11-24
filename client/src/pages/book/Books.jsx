@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import BooksCard from "./BooksCard";
+import { Helmet } from "react-helmet-async";
 
 const Books = () => {
   const [books, setBooks] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch("https://library-book-server.vercel.app/books")
+    fetch("https://dulibrarybook-server.vercel.app/books")
       .then((res) => res.json())
       .then((data) => setBooks(data));
   }, []);
@@ -21,6 +22,9 @@ const Books = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Library | Book</title>
+      </Helmet>
       <div className="p-6">
         {/* Search Input */}
         <input

@@ -1,5 +1,6 @@
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const express = require("express");
+// const jwt = require("jsonwebtoken");
 const cors = require("cors");
 require("dotenv").config();
 const port = process.env.PORT || 5000;
@@ -7,8 +8,8 @@ const app = express();
 const corsOption = {
   origin: [
     // "http://localhost:5173",
-    //  "http://localhost:5174",
-    //  "http://localhost:5175",
+    // "http://localhost:5174",
+    // "http://localhost:5175",
 
     "https://library-book-cd5bc.web.app",
     "https://library-book-cd5bc.firebaseapp.com",
@@ -32,8 +33,24 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    await client.connect();
+    // await client.connect();
     const booksCollection = client.db("duLibraryBook").collection("books");
+
+    //api server
+    // app.post("/jwt", async (req, res) => {
+    //   const user = req.body;
+    //   console.log(user);
+    //   const token = jwt.sign(user, process.env.ACCESS_TOKEN, {
+    //     expiresIn: "1h",
+    //   });
+    //   res
+    //     .cookie("token", token, {
+    //       httpOnly: token,
+    //       secure: false,
+    //       sameSite: "none",
+    //     })
+    //     .send({ success: true });
+    // });
 
     // Get all books from the database
     app.get("/books", async (req, res) => {
@@ -88,7 +105,7 @@ async function run() {
       res.send(result);
     });
 
-    await client.db("admin").command({ ping: 1 });
+    // await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
     );

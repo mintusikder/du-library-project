@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Social/Login";
-import Registration from "../pages/Social/Register";
+// import Registration from "../pages/Social/Register";
 import Books from "../pages/book/Books";
 import AddBook from "../pages/book/AddBook";
 import UpdateBook from "../pages/book/UpdateBook";
@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
         path: "/updateBook/:id",
         element: <UpdateBook></UpdateBook>,
         loader: ({ params }) =>
-          fetch(`https://library-book-server.vercel.app/books/${params.id}`),
+          fetch(`https://dulibrarybook-server.vercel.app/books/${params.id}`),
       },
     ],
   },

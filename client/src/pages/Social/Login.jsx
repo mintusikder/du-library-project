@@ -1,4 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
+// import axios from 'axios';
 import bgImg from "../../assets/images/logo.jpg";
 import logo from "../../assets/images/logo.png";
 import { useContext } from "react";
@@ -27,8 +28,12 @@ const Login = () => {
     try {
       const result = await signIn(email, password);
       console.log(result);
+      // const user = { email };
       navigate("/");
       toast.success("Signin Success");
+      // axios.post(`https://dulibrarybook-server.vercel.app/jwt`, user).then((res) =>
+      //   console.log(res.data)
+      // );
     } catch (err) {
       console.log(err);
       toast.error("Invalid Email");
