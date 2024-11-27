@@ -110,7 +110,7 @@ const BookCard = ({ book, books, setBooks }) => {
       {/* Buttons on the right side */}
       <div className="flex flex-col space-y-2 ml-4">
         <button className="px-4 py-2 bg-gray-500 text-white rounded">
-          <Link to={`/updateBook/${_id}`}>
+          <Link to={`/updateBook:/${_id}`}>
             <FaRegEdit />
           </Link>
         </button>

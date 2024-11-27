@@ -14,7 +14,7 @@ const Navbar = () => {
           </Link>
           <Link to="/">
             {" "}
-            <span className="font-bold">Book Library</span>
+            <span className="font-bold">গ্রন্থাগার</span>
           </Link>
         </div>
       </div>

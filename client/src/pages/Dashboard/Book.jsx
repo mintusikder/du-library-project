@@ -21,7 +21,9 @@ const Book = () => {
 
   return (
     <div>
+      <h3 className="text-3xl font-bold text-center">Total Book : {books.length}</h3>
       <div className="p-6">
+      
         {/* Search Input */}
         <input
           type="text"
