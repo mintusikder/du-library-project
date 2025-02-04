@@ -51,69 +51,42 @@ const BookCard = ({ book, books, setBooks }) => {
     <div className="w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md dark:bg-gray-800 flex justify-between">
       {/* Book details */}
       <div>
-        <h1
-          className="mt-2 text-lg font-semibold text-gray-800 dark:text-white"
-          aria-label="Book Title"
-        >
+        <h1 className="mt-2 text-lg font-semibold text-gray-800 dark:text-white">
           বইয়ের নাম: {book_title}
         </h1>
-        <p
-          className="mt-2 text-sm text-gray-600 dark:text-gray-300"
-          aria-label="Author"
-        >
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
           লেখক: {author}
         </p>
-        <p
-          className="mt-2 text-sm text-gray-600 dark:text-gray-300"
-          aria-label="Publisher"
-        >
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
           প্রকাশক: {publisher}
         </p>
-        <p
-          className="mt-2 text-sm text-gray-600 dark:text-gray-300"
-          aria-label="Volume"
-        >
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
           সংখ্যা: {volume}
         </p>
-        <p
-          className="mt-2 text-sm text-gray-600 dark:text-gray-300"
-          aria-label="Category"
-        >
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
           Shelf: {category}
         </p>
-        <p
-          className="mt-2 text-sm text-gray-600 dark:text-gray-300"
-          aria-label="ISBN"
-        >
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
           ISBN: {isbn}
         </p>
-        <p
-          className="mt-2 text-sm text-gray-600 dark:text-gray-300"
-          aria-label="Price"
-        >
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
           মূল্য: {price}
         </p>
-        <p
-          className="mt-2 text-sm text-gray-600 dark:text-gray-300"
-          aria-label="Purchase Method"
-        >
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
           Purchase Method: {purchase_method}
         </p>
-        <p
-          className="mt-2 text-sm text-gray-600 dark:text-gray-300"
-          aria-label="Year"
-        >
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
           Year: {year}
         </p>
       </div>
 
       {/* Buttons on the right side */}
       <div className="flex flex-col space-y-2 ml-4">
-        <button className="px-4 py-2 bg-gray-500 text-white rounded">
-          <Link to={`/updateBook:/${_id}`}>
+        <Link to={`/updateBook/${_id}`}>
+          <button className="px-4 py-2 bg-gray-500 text-white rounded">
             <FaRegEdit />
-          </Link>
-        </button>
+          </button>
+        </Link>
         <button
           onClick={() => handleDelete(_id)}
           className="px-4 py-2 bg-red-400 text-white rounded"
