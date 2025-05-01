@@ -25,8 +25,9 @@ const Books = () => {
       <Helmet>
         <title>Library | Book</title>
       </Helmet>
-      <div className="p-6">
-        {/* Search Input */}
+
+      {/* Fixed Search Input */}
+      <div className="fixed flex items-center justify-center top-16  w-5/6 z-10 ">
         <input
           type="text"
           value={searchQuery}
@@ -35,7 +36,9 @@ const Books = () => {
           className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 p-6 mx-auto">
+
+      {/* Book Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 p-6    pt-[65px] mx-auto">
         {filteredBooks.length > 0 ? (
           filteredBooks.map((book) => (
             <BooksCard book={book} key={book._id}></BooksCard>
